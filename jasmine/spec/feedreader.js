@@ -63,7 +63,7 @@ $(function() {
          */
          it('element is hidden by default', function() {
             expect(document.body.classList.contains('menu-hidden')).toBe(true);
-         })
+         });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -76,11 +76,13 @@ $(function() {
             expect(document.body.classList.contains('menu-hidden')).toEqual(false);
             $('.menu-icon-link').trigger('click');
             expect(document.body.classList.contains('menu-hidden')).toEqual(true);
-          })
+          });
 
-    })
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
+
+    describe('Initial Entries', function() {
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -88,6 +90,18 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+         beforeEach(function(done){
+            loadFeed(0, function(){
+                done();
+            });
+         });
+
+         it('exist in feed container', function(){
+            expect(allFeeds[0]).not.toBe(0);
+            expect(document.querySelector('.feed').hasChildNodes()).toBe(true);
+         });
+
+    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
