@@ -21,7 +21,6 @@ This a Feed Reader used to implement test units using Jasmine.
 ```
 $ git clone https://github.com/JulioVL/frontend-nanodegree-feedreader.git
 ```
-- Or you can try it on this site: [FeedReaderWeb](https://juliovl.github.io/frontend-nanodegree-feedreader/).
 
 ### Tests Description
 
