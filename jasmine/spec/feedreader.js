@@ -70,6 +70,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          //Code by: https://medium.com/letsboot/testing-javascript-with-jasmine-basics-48efe03cf973
+          it('toggles when icon clicked', function() {
+            $('.menu-icon-link').trigger('click');
+            expect(document.body.classList.contains('menu-hidden')).toEqual(false);
+            $('.menu-icon-link').trigger('click');
+            expect(document.body.classList.contains('menu-hidden')).toEqual(true);
+          })
 
     })
 
