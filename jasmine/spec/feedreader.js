@@ -96,9 +96,10 @@ $(function() {
             });
          });
 
+
+        //Check parent child relationship
          it('exist in feed container', function(){
-            expect(allFeeds[0]).not.toBe(0);
-            expect(document.querySelector('.feed').hasChildNodes()).toBe(true);
+            expect(document.querySelector('.feed .entry')).toBeDefined();
          });
 
     });
