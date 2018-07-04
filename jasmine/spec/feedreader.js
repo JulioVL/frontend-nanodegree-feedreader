@@ -88,16 +88,15 @@ $(function() {
          beforeEach(function(done){
             loadFeed(0, function(){
                 firstFeed = document.querySelector('.feed').innerHTML;
-                done();
-            });
-            loadFeed(1, function(){
-                secondFeed = document.querySelector('.feed').innerHTML;
-                done();
+                loadFeed(1, function(){
+                    secondFeed = document.querySelector('.feed').innerHTML;
+                    done();
+                });
             });
          });
 
          it('has different content', function(){
-            expect(firstFeed != secondFeed).toBe(true);   
+            expect(firstFeed !== secondFeed).toBe(true);   
          });
          
     });
